@@ -1,6 +1,7 @@
 package fiper
 
 import (
+	"path/filepath"
 	"plugin"
 )
 
@@ -8,7 +9,11 @@ var fiperPlugin *plugin.Plugin
 
 func New() error {
 	// START
-	p, err := plugin.Open("fiper/fiper.so")
+	abs, err := filepath.Abs("./fiper/fiper.so")
+	if err != nil {
+		return err
+	}
+	p, err := plugin.Open(abs)
 	if err != nil {
 		return err
 	}
