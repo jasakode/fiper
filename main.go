@@ -9,7 +9,7 @@ var fiperPlugin *plugin.Plugin
 
 func New() error {
 	// START
-	abs, err := filepath.Abs("fiper.so")
+	abs, err := filepath.Abs("./fiper.so")
 	if err != nil {
 		return err
 	}
