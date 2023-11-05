@@ -7,9 +7,9 @@ import (
 
 var fiperPlugin *plugin.Plugin
 
-func New() error {
+func New(soFileLock string) error {
 	// START
-	abs, err := filepath.Abs("./fiper.so")
+	abs, err := filepath.Abs("./" + soFileLock)
 	if err != nil {
 		return err
 	}
